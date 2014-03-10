@@ -45,7 +45,7 @@ TANK.registerComponent("Player")
 
     ctx.save();
     ctx.fillStyle = "#5d5";
-    ctx.fillRect(t.x * TANK.World.cellSize, t.y * TANK.World.cellSize, TANK.World.cellSize, TANK.World.cellSize);
+    ctx.fillRect(t.x * TANK.World.pixelsPerCell, t.y * TANK.World.pixelsPerCell, TANK.World.pixelsPerCell, TANK.World.pixelsPerCell);
     ctx.restore();
   };
 });

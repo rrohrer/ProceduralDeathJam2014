@@ -17,9 +17,13 @@ TANK.registerComponent("World")
   ];
 
   this.zdepth = 0;
-  this.worldWidth = 30;
-  this.worldHeight = 20;
-  this.cellSize = 50;
+  this.cellWidth = 16;
+  this.cellHeight = 16;
+  this.numCellsWide = 8;
+  this.numCellsTall = 8;
+  this.worldWidth = this.cellWidth * this.numCellsWide;
+  this.worldHeight = this.cellHeight * this.numCellsTall;
+  this.pixelsPerCell = 4;
   this.cells = [];
 })
 
@@ -54,7 +58,7 @@ TANK.registerComponent("World")
         var cell = this.cells[i][j];
         var color = this.cellColors[cell];
         ctx.fillStyle = color;
-        ctx.fillRect(i * this.cellSize, j * this.cellSize, this.cellSize, this.cellSize);
+        ctx.fillRect(i * this.pixelsPerCell, j * this.pixelsPerCell, this.pixelsPerCell, this.pixelsPerCell);
       }
     }
     ctx.restore();
