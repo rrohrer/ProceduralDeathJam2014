@@ -2,12 +2,16 @@ TANK.registerComponent("AudioEngine")
 .construct( function ()
 {
   this.backgroundMusic = new Audio("data/music.mp3");
-
+  this.hasInitOnce = false;
   var parent = this;
   this.backgroundMusic.addEventListener("canplaythrough", function ()
   {
-    if (!TANK.getEntity("Player")) TANK.start();
     this.play();
+    if (parent.hasInitOnce === false)
+    {
+      parent.hasInitOnce = true;
+      TANK.start();
+    }
   });
   this.backgroundMusic.addEventListener("ended", function()
   {

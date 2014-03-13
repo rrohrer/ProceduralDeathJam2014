@@ -8,7 +8,7 @@ TANK.registerComponent("Player")
 {
   this.zdepth = 1;
   this.timeSinceBeat = 0.0;
-  this.beatForgiveness = TANK.AudioEngine.audioBeatEventValue * 0.45;
+  this.beatForgiveness = TANK.AudioEngine.audioBeatEventValue * 0.43;
   this.pressedThisBeat = false;
   this.pressedTimer = 0.0;
   this.processKeyboardInput = function (keycode)
