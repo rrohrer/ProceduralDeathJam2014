@@ -16,10 +16,10 @@ TANK.registerComponent("World")
   ];
 
   this.zdepth = 0;
-  this.cellWidth = 16;
-  this.cellHeight = 16;
-  this.numCellsWide = 8;
-  this.numCellsTall = 8;
+  this.cellWidth = 8;
+  this.cellHeight = 8;
+  this.numCellsWide = 16;
+  this.numCellsTall = 16;
   this.worldWidth = this.cellWidth * this.numCellsWide;
   this.worldHeight = this.cellHeight * this.numCellsTall;
   this.pixelsPerCell = 6;
@@ -35,7 +35,7 @@ TANK.registerComponent("World")
   this.cellsWithRooms = []
   for (var i = 0; i < this.numCellsWide * this.numCellsTall; ++i)
   {
-    if (Math.random() > 0.6)
+    if (Math.random() > 0.7)
     {
       this.cellsWithRooms.push(i);
     }
