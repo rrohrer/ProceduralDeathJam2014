@@ -245,13 +245,13 @@ TANK.registerComponent("World")
         this.cells[xi][yEnd] = 0;
       }
     }
-
-    this.addEventListener("AudioBeatEvent", function ()
-    {
-      this.bgColorIndex = (this.bgColorIndex + 1) % this.bgColors.length;
-      this.cellColors[1] = this.bgColors[this.bgColorIndex];
-    });
   }
+//END OF LEVEL GENERATION
+  this.addEventListener("AudioBeatEvent", function ()
+  {
+    this.bgColorIndex = (this.bgColorIndex + 1) % this.bgColors.length;
+    this.cellColors[1] = this.bgColors[this.bgColorIndex];
+  });
 
   this.getCellAt = function(x, y)
   {
