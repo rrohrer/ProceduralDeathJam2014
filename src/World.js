@@ -10,8 +10,8 @@ TANK.registerComponent("World")
 
   this.cellColors =
   [
-    "#666",
     "#555",
+    "#333",
     "#f0f"
   ];
   this.bgColors = ["#333", "#522", "#232", "#225"];
@@ -24,7 +24,7 @@ TANK.registerComponent("World")
   this.numCellsTall = 16;
   this.worldWidth = this.cellWidth * this.numCellsWide;
   this.worldHeight = this.cellHeight * this.numCellsTall;
-  this.pixelsPerCell = 6;
+  this.pixelsPerCell = 20;
   this.cells = [];
   this.playerStartX = 0;
   this.playerStartY = 0;
@@ -270,7 +270,8 @@ TANK.registerComponent("World")
   this.draw = function(ctx, camera)
   {
     ctx.save();
-    ctx.translate(-camera.x, -camera.y);
+    var camTrans = calculateCameraTransform(camera);
+    ctx.translate(camTrans[0], camTrans[1]);
 
     for (var i = 0; i < this.worldWidth; ++i)
     {

@@ -6,7 +6,7 @@ TANK.registerComponent("AudioEngine")
   var parent = this;
   this.backgroundMusic.addEventListener("canplaythrough", function ()
   {
-    TANK.start();
+    if (!TANK.getEntity("Player")) TANK.start();
     this.play();
   });
   this.backgroundMusic.addEventListener("ended", function()
@@ -19,7 +19,7 @@ TANK.registerComponent("AudioEngine")
 
   //music sync options
   this.bpm = 132.0;
-  this.gameUpdateBeat = 1.0;
+  this.gameUpdateBeat = 0.5;
   this.currentAudioClock = 0.0;
 
   this.audioBeatEventValue = 60.0 / (this.bpm / this.gameUpdateBeat);

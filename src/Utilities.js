@@ -15,3 +15,8 @@ function generateRandomColor3()
   var b = generateRandomIntegerRange(3, 11);
   return "#" + r.toString(16) + g.toString(16) + b.toString(16);
 }
+
+function calculateCameraTransform(camera)
+{
+  return [-Math.floor(camera.x * TANK.World.pixelsPerCell - (TANK.RenderManager.context.canvas.width / 2)), -Math.floor(camera.y * TANK.World.pixelsPerCell - (TANK.RenderManager.context.canvas.height / 2))]
+}
