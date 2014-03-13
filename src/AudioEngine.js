@@ -2,11 +2,10 @@ TANK.registerComponent("AudioEngine")
 .construct( function ()
 {
   this.backgroundMusic = new Audio("data/music.mp3");
-  this.backgroundMusicLoaded = false;
+
   var parent = this;
   this.backgroundMusic.addEventListener("canplaythrough", function ()
   {
-    parent.backgroundMusicLoaded = true;
     TANK.start();
     this.play();
   });
@@ -14,8 +13,9 @@ TANK.registerComponent("AudioEngine")
   {
     this.currentTime = 0;
     this.play();
-    that.currentAudioClock = 0.0;
+    parent.currentAudioClock = 0.0;
   }, false);
+  this.backgroundMusic.load();
 
   //music sync options
   this.bpm = 132.0;

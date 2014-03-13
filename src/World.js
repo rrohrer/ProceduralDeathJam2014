@@ -10,7 +10,7 @@ TANK.registerComponent("World")
 
   this.cellColors =
   [
-    "#aaa",
+    "#bbb",
     "#555",
     "#f0f"
   ];
