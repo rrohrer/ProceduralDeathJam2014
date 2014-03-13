@@ -14,6 +14,8 @@ TANK.registerComponent("World")
     "#555",
     "#f0f"
   ];
+  this.bgColors = ["#555", "#733", "#373", "#337"];
+  this.bgColorIndex = 0;
 
   this.zdepth = 0;
   this.cellWidth = 8;
@@ -244,6 +246,11 @@ TANK.registerComponent("World")
       }
     }
 
+    this.addEventListener("AudioBeatEvent", function ()
+    {
+      this.bgColorIndex = (this.bgColorIndex + 1) % this.bgColors.length;
+      this.cellColors[1] = this.bgColors[this.bgColorIndex];
+    });
   }
 
   this.getCellAt = function(x, y)

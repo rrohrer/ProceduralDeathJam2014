@@ -2,12 +2,12 @@ function main()
 {
   lowLag.init();
 
-  TANK.addComponents("World, Game, InputManager, RenderManager");
+  TANK.addComponents("World, Game, InputManager, RenderManager", "AudioEngine");
 
   TANK.RenderManager.context = document.getElementById("canvas").getContext("2d");
   TANK.InputManager.context = document.getElementById("stage");
 
-  TANK.start();
+  //TANK.start();
   //OnEnterFrame dt in seconds
   //OnGameTick
   //TANK.dispatchEvent("", ards)
