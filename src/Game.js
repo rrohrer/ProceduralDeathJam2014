@@ -9,5 +9,5 @@ TANK.registerComponent("Game")
   var e = TANK.createEntity("Player");
   e.Pos2D.x = 1;
   e.Pos2D.y = 1;
-  TANK.addEntity(e);
+  TANK.addEntity(e); //, "name"); then you can get TANK.getEntity();
 });
