@@ -10,11 +10,11 @@ TANK.registerComponent("World")
 
   this.cellColors =
   [
-    "#bbb",
+    "#666",
     "#555",
     "#f0f"
   ];
-  this.bgColors = ["#555", "#733", "#373", "#337"];
+  this.bgColors = ["#333", "#522", "#232", "#225"];
   this.bgColorIndex = 0;
 
   this.zdepth = 0;
@@ -26,6 +26,8 @@ TANK.registerComponent("World")
   this.worldHeight = this.cellHeight * this.numCellsTall;
   this.pixelsPerCell = 6;
   this.cells = [];
+  this.playerStartX = 0;
+  this.playerStartY = 0;
 
   //generate debugging colors for the cells
   for (var i = 0; i < this.numCellsWide * this.numCellsTall; i++)
@@ -246,6 +248,13 @@ TANK.registerComponent("World")
       }
     }
   }
+  //END OF MAP BUILDING
+
+  var playerStartRoom = generateRandomIntegerRange(0, this.roomList.length - 1);
+  var playerStartRoomCoord = this.indexToCoord(this.roomList[playerStartRoom].indexList[0]);
+  this.playerStartX = playerStartRoomCoord[0] * this.cellWidth + Math.floor(this.cellWidth / 2);
+  this.playerStartY = playerStartRoomCoord[1] * this.cellHeight + Math.floor(this.cellHeight / 2);
+
 //END OF LEVEL GENERATION
   this.addEventListener("AudioBeatEvent", function ()
   {

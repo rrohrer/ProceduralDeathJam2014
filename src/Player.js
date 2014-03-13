@@ -44,7 +44,7 @@ TANK.registerComponent("Player")
     var t = this.parent.Pos2D;
 
     ctx.save();
-    ctx.fillStyle = "#5d5";
+    ctx.fillStyle = "#baf";
     ctx.fillRect(t.x * TANK.World.pixelsPerCell, t.y * TANK.World.pixelsPerCell, TANK.World.pixelsPerCell, TANK.World.pixelsPerCell);
     ctx.restore();
   };
